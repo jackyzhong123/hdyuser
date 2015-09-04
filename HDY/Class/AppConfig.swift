@@ -58,12 +58,18 @@ class AppConfig: NSObject {
     static var Url_MyActivityList = "api/Activity/MyActivityList"
     
     static var Url_PersonRegister = "api/Login/PersonRegister"
+    
     static var Url_PersonLogin = "api/Login/PersonLogin"
+    
+    static var Url_ChangeRealName = "api/Login/ChangeRealName"
+    
+    static var Url_ChangeHDYName = "api/Login/ChangeHDYName"
     
     
     ////////////////////////////=== Notification
     static var NF_SelectAlbum = "SelectAlbum"
     static var NF_SelectLocation = "SelectLocation"
+    static var NF_ChangeUerProfile = "ChangeUerProfile"
     
     
     
@@ -112,6 +118,7 @@ class AppConfig: NSObject {
     var IsCreator = false
     var HDYName = ""
     var Portrait = ""
+    var RealName = ""
     //MARK: 一些函数
     func isUserLogin()->Bool
     {
@@ -129,10 +136,11 @@ class AppConfig: NSObject {
         var varData = data as! NSData;
         let dataDir:NSDictionary =  NSJSONSerialization.JSONObjectWithData(varData, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSDictionary
         
-        AppConfig.sharedAppConfig.HDYName = dataDir.objectForKey("Name") as! String
+        AppConfig.sharedAppConfig.HDYName = dataDir.objectForKey("HDYName") as! String
         AppConfig.sharedAppConfig.Portrait = dataDir.objectForKey("Portrait") as! String
+        AppConfig.sharedAppConfig.RealName = dataDir.objectForKey("RealName") as! String
         AppConfig.sharedAppConfig.save()
-    NSNotificationCenter.defaultCenter().postNotificationName("ReloadUserInfo_Notiication", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("ReloadUserInfo_Notiication", object: nil)
     }
     
     
@@ -176,6 +184,14 @@ class AppConfig: NSObject {
             ud.removeObjectForKey("Configuration_HDYName")
         }
         
+        if(!self.RealName.isNullOrEmpty())
+        {
+            ud.setObject(self.RealName, forKey: "Configuration_RealName")
+        }
+        else
+        {
+            ud.removeObjectForKey("Configuration_RealName")
+        }
         
         
         return true
@@ -204,6 +220,11 @@ class AppConfig: NSObject {
         {
             self.HDYName = ud.objectForKey("Configuration_HDYName") as! String;
         }
+        if(ud.objectForKey("Configuration_RealName") != nil)
+        {
+            self.RealName = ud.objectForKey("Configuration_RealName") as! String;
+        }
+        
         if(ud.objectForKey("Configuration_Portrait") != nil)
         {
             self.Portrait = ud.objectForKey("Configuration_Portrait") as! String;
@@ -213,6 +234,7 @@ class AppConfig: NSObject {
         {
             self.IsCreator = ud.boolForKey("Configuration_CurrentIsCreator")
         }
+        
     }
     
     

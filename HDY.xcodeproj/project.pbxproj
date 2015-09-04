@@ -57,6 +57,9 @@
 		1B689A8B1B98997E0017EB85 /* TextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B689A8A1B98997E0017EB85 /* TextBoxView.swift */; };
 		1BFB8E2C1B9927F700C018B2 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8E2B1B9927F700C018B2 /* MeVC.swift */; };
 		1BFB8E2E1B99284800C018B2 /* MeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */; };
+		33615E0C1B994FC70046750F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E0B1B994FC70046750F /* ProfileVC.swift */; };
+		33615E151B996C0B0046750F /* ChangeRealNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E141B996C0B0046750F /* ChangeRealNameVC.swift */; };
+		33615E171B997AC00046750F /* ChangeHDYNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E161B997AC00046750F /* ChangeHDYNameVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,9 @@
 		1B689A8A1B98997E0017EB85 /* TextBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBoxView.swift; sourceTree = "<group>"; };
 		1BFB8E2B1B9927F700C018B2 /* MeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MeVC.swift; path = View/MeVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MeHeaderCell.swift; path = View/MeHeaderCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		33615E0B1B994FC70046750F /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = View/ProfileVC.swift; sourceTree = "<group>"; };
+		33615E141B996C0B0046750F /* ChangeRealNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeRealNameVC.swift; path = View/ChangeRealNameVC.swift; sourceTree = "<group>"; };
+		33615E161B997AC00046750F /* ChangeHDYNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeHDYNameVC.swift; path = View/ChangeHDYNameVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +258,7 @@
 		1B6899EA1B988BAB0017EB85 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				33615E0D1B9950530046750F /* Sample */,
 				1B689A801B9897D10017EB85 /* RootVC.swift */,
 				1B689A791B9896C00017EB85 /* Account */,
 			);
@@ -393,6 +400,9 @@
 				1B689A851B9899100017EB85 /* RegisterVC.swift */,
 				1BFB8E2B1B9927F700C018B2 /* MeVC.swift */,
 				1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */,
+				33615E0B1B994FC70046750F /* ProfileVC.swift */,
+				33615E141B996C0B0046750F /* ChangeRealNameVC.swift */,
+				33615E161B997AC00046750F /* ChangeHDYNameVC.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -404,6 +414,13 @@
 			);
 			name = UserControl;
 			path = Class/UserControl;
+			sourceTree = "<group>";
+		};
+		33615E0D1B9950530046750F /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,6 +548,7 @@
 				1B689A4B1B988C3A0017EB85 /* AFSecurityPolicy.m in Sources */,
 				1B689A701B988CFB0017EB85 /* UserDefaultsHelper.swift in Sources */,
 				1B689A551B988C3A0017EB85 /* SDWebImageDownloader.m in Sources */,
+				33615E151B996C0B0046750F /* ChangeRealNameVC.swift in Sources */,
 				1B689A531B988C3A0017EB85 /* SDWebImageCompat.m in Sources */,
 				1B689A871B9899100017EB85 /* RegisterStep3VC.swift in Sources */,
 				1B689A621B988C3A0017EB85 /* SVProgressHUD.m in Sources */,
@@ -538,8 +556,10 @@
 				1B689A7F1B9897A70017EB85 /* LoginVC.swift in Sources */,
 				1B689A491B988C3A0017EB85 /* AFHTTPSessionManager.m in Sources */,
 				1B689A5A1B988C3A0017EB85 /* UIImage+GIF.m in Sources */,
+				33615E0C1B994FC70046750F /* ProfileVC.swift in Sources */,
 				1B689A5B1B988C3A0017EB85 /* UIImage+MultiFormat.m in Sources */,
 				1B689A861B9899100017EB85 /* RegisterStep2VC.swift in Sources */,
+				33615E171B997AC00046750F /* ChangeHDYNameVC.swift in Sources */,
 				1B689A4D1B988C3A0017EB85 /* AFURLRequestSerialization.m in Sources */,
 				1BFB8E2C1B9927F700C018B2 /* MeVC.swift in Sources */,
 				1B689A581B988C3A0017EB85 /* SDWebImagePrefetcher.m in Sources */,

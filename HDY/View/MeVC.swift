@@ -16,8 +16,8 @@ class MeVC: RootVC ,UITableViewDataSource,UITableViewDelegate
     @IBOutlet var tableView: UITableView!
     let headCell = "MeHeaderCell"
     let generalCell = "Cell"
-    let iconArr = ["setting_myCardList"]
-    let titleArr = ["注销"]
+    let iconArr = []
+    let titleArr = []
     
     
     //MARK: 页面生命周期
@@ -30,6 +30,14 @@ class MeVC: RootVC ,UITableViewDataSource,UITableViewDelegate
         self.title = "我的"
         self.tableView.delegate = self
         self.tableView.dataSource = self
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeUserStatus:", name: AppConfig.NF_ChangeUerProfile, object: nil)
+    }
+    
+    func changeUserStatus(notification:NSNotification)
+    {
+        tableView.reloadData();
+       // settingTableView.reloadInputViews();
+        
     }
     
     
@@ -83,7 +91,9 @@ class MeVC: RootVC ,UITableViewDataSource,UITableViewDelegate
         if (indexPath.section == 0)
         {
             var headcell:MeHeaderCell = self.tableView.dequeueReusableCellWithIdentifier(self.headCell) as! MeHeaderCell
-            headcell.lbName.text = AppConfig.sharedAppConfig.HDYName
+         
+            headcell.lbName.text = AppConfig.sharedAppConfig.RealName
+            headcell.lbPersonHDYName.text = "活动邮号：" + AppConfig.sharedAppConfig.HDYName
             headcell.imgCover!.sd_setImageWithURL(NSURL(string:AppConfig.sharedAppConfig.Portrait)!, placeholderImage: UIImage(named: "placeholder.png"))
             var layer:CALayer = headcell.imgCover.layer
             layer.cornerRadius = 10
@@ -93,8 +103,8 @@ class MeVC: RootVC ,UITableViewDataSource,UITableViewDelegate
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(self.generalCell) as! UITableViewCell
         if (indexPath.section == 1 )
         {
-            cell.textLabel?.text = titleArr [indexPath.row]
-            cell.imageView?.image = UIImage(named: iconArr[indexPath.row])
+            cell.textLabel?.text = titleArr [indexPath.row] as? String
+            cell.imageView?.image = UIImage(named: iconArr[indexPath.row] as! String)
             
             
             return cell;
@@ -108,10 +118,13 @@ class MeVC: RootVC ,UITableViewDataSource,UITableViewDelegate
         
         if (indexPath.section == 0 )
         {
-            //开始上传图片
+            var vc = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "ProfileVC")
+            self.navigationController?.pushViewController(vc, animated: true)
+
             return
         }else
         {
+            
             //注销
             AppConfig.sharedAppConfig.userLogout()
             var vc = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "loginNavigation")
