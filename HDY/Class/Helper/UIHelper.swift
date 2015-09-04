@@ -26,6 +26,7 @@ enum StoryboardCategory
     case Public
     case Order
     case Affair
+    case Find
 }
 
 
@@ -100,6 +101,10 @@ class UIHelper {
         case .Affair:
             sid="Affair"
             break;
+        case .Find:
+            sid="Find"
+            break;
+            
         default :
             sid = "";
             break;
@@ -202,6 +207,11 @@ class UIHelper {
     static func SetNaviBarRightItemWithName(targetVC:UIViewController,action:Selector,strName:String)
     {
         UIHelper.SetNavigationBar(false, targetVC: targetVC, doAction: action, isImg: false, strNname: strName,color:mainColor)
+    }
+    
+    static func SetNaviBarRightItemWithIcon(targetVC:UIViewController,action:Selector,strName:String)
+    {
+        UIHelper.SetNavigationBar(false, targetVC: targetVC, doAction: action, isImg: true, strNname: strName,color:mainColor)
     }
     
     

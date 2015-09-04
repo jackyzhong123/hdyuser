@@ -60,6 +60,21 @@
 		33615E0C1B994FC70046750F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E0B1B994FC70046750F /* ProfileVC.swift */; };
 		33615E151B996C0B0046750F /* ChangeRealNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E141B996C0B0046750F /* ChangeRealNameVC.swift */; };
 		33615E171B997AC00046750F /* ChangeHDYNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E161B997AC00046750F /* ChangeHDYNameVC.swift */; };
+		33615E221B99A8290046750F /* FindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E211B99A8290046750F /* FindVC.swift */; };
+		33615E261B99AA720046750F /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33615E251B99AA720046750F /* Find.storyboard */; };
+		33615E2A1B99AB530046750F /* AllActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E291B99AB530046750F /* AllActivityVC.swift */; };
+		33615E2E1B99ABF00046750F /* LocationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E2B1B99ABF00046750F /* LocationDetail.swift */; };
+		33615E2F1B99ABF00046750F /* AlbumDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E2C1B99ABF00046750F /* AlbumDetail.swift */; };
+		33615E301B99ABF00046750F /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E2D1B99ABF00046750F /* MapPin.swift */; };
+		33615E321B99AC7A0046750F /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E311B99AC7A0046750F /* ActivityDetail.swift */; };
+		33615E341B99C3A10046750F /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 33615E331B99C3A10046750F /* placeholder.png */; };
+		33615E361B99C3CC0046750F /* AllOrganizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E351B99C3CC0046750F /* AllOrganizationVC.swift */; };
+		33615E381B99C44C0046750F /* OrganizationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E371B99C44C0046750F /* OrganizationDetail.swift */; };
+		33615E3A1B99DC3F0046750F /* AllAlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E391B99DC3F0046750F /* AllAlbumVC.swift */; };
+		33615E3C1B99E19C0046750F /* AllPersonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E3B1B99E19C0046750F /* AllPersonVC.swift */; };
+		33615E3E1B99E3410046750F /* PersonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E3D1B99E3410046750F /* PersonDetail.swift */; };
+		33615E411B9A002B0046750F /* HuoDongYouVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E401B9A002B0046750F /* HuoDongYouVC.swift */; };
+		33615E431B9A01E70046750F /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E421B9A01E70046750F /* ContactVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +175,21 @@
 		33615E0B1B994FC70046750F /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = View/ProfileVC.swift; sourceTree = "<group>"; };
 		33615E141B996C0B0046750F /* ChangeRealNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeRealNameVC.swift; path = View/ChangeRealNameVC.swift; sourceTree = "<group>"; };
 		33615E161B997AC00046750F /* ChangeHDYNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeHDYNameVC.swift; path = View/ChangeHDYNameVC.swift; sourceTree = "<group>"; };
+		33615E211B99A8290046750F /* FindVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindVC.swift; path = View/FindVC.swift; sourceTree = "<group>"; };
+		33615E251B99AA720046750F /* Find.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Find.storyboard; sourceTree = "<group>"; };
+		33615E291B99AB530046750F /* AllActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllActivityVC.swift; path = View/AllActivityVC.swift; sourceTree = "<group>"; };
+		33615E2B1B99ABF00046750F /* LocationDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetail.swift; sourceTree = "<group>"; };
+		33615E2C1B99ABF00046750F /* AlbumDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetail.swift; sourceTree = "<group>"; };
+		33615E2D1B99ABF00046750F /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		33615E311B99AC7A0046750F /* ActivityDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityDetail.swift; path = Class/ActivityDetail.swift; sourceTree = "<group>"; };
+		33615E331B99C3A10046750F /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		33615E351B99C3CC0046750F /* AllOrganizationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllOrganizationVC.swift; path = View/AllOrganizationVC.swift; sourceTree = "<group>"; };
+		33615E371B99C44C0046750F /* OrganizationDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDetail.swift; sourceTree = "<group>"; };
+		33615E391B99DC3F0046750F /* AllAlbumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllAlbumVC.swift; path = View/AllAlbumVC.swift; sourceTree = "<group>"; };
+		33615E3B1B99E19C0046750F /* AllPersonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllPersonVC.swift; path = View/AllPersonVC.swift; sourceTree = "<group>"; };
+		33615E3D1B99E3410046750F /* PersonDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetail.swift; sourceTree = "<group>"; };
+		33615E401B9A002B0046750F /* HuoDongYouVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HuoDongYouVC.swift; path = View/HuoDongYouVC.swift; sourceTree = "<group>"; };
+		33615E421B9A01E70046750F /* ContactVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactVC.swift; path = View/ContactVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +245,7 @@
 				1B6899D21B988AC90017EB85 /* LaunchScreen.xib */,
 				1B6899C51B988AC90017EB85 /* Supporting Files */,
 				1B689A771B9893860017EB85 /* Account.storyboard */,
+				33615E251B99AA720046750F /* Find.storyboard */,
 			);
 			path = HDY;
 			sourceTree = "<group>";
@@ -222,6 +253,7 @@
 		1B6899C51B988AC90017EB85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33615E331B99C3A10046750F /* placeholder.png */,
 				1B6899C61B988AC90017EB85 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -258,6 +290,8 @@
 		1B6899EA1B988BAB0017EB85 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				33615E3F1B99FFF40046750F /* Home */,
+				33615E201B99A7DD0046750F /* Find */,
 				33615E0D1B9950530046750F /* Sample */,
 				1B689A801B9897D10017EB85 /* RootVC.swift */,
 				1B689A791B9896C00017EB85 /* Account */,
@@ -285,6 +319,12 @@
 		1B6899ED1B988BC80017EB85 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				33615E2B1B99ABF00046750F /* LocationDetail.swift */,
+				33615E2C1B99ABF00046750F /* AlbumDetail.swift */,
+				33615E2D1B99ABF00046750F /* MapPin.swift */,
+				33615E311B99AC7A0046750F /* ActivityDetail.swift */,
+				33615E371B99C44C0046750F /* OrganizationDetail.swift */,
+				33615E3D1B99E3410046750F /* PersonDetail.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -423,6 +463,27 @@
 			name = Sample;
 			sourceTree = "<group>";
 		};
+		33615E201B99A7DD0046750F /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				33615E211B99A8290046750F /* FindVC.swift */,
+				33615E291B99AB530046750F /* AllActivityVC.swift */,
+				33615E351B99C3CC0046750F /* AllOrganizationVC.swift */,
+				33615E391B99DC3F0046750F /* AllAlbumVC.swift */,
+				33615E3B1B99E19C0046750F /* AllPersonVC.swift */,
+			);
+			name = Find;
+			sourceTree = "<group>";
+		};
+		33615E3F1B99FFF40046750F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				33615E401B9A002B0046750F /* HuoDongYouVC.swift */,
+				33615E421B9A01E70046750F /* ContactVC.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -507,7 +568,9 @@
 				1B689A721B988D310017EB85 /* Images.xcassets in Resources */,
 				1B689A781B9893860017EB85 /* Account.storyboard in Resources */,
 				1B6899D41B988AC90017EB85 /* LaunchScreen.xib in Resources */,
+				33615E341B99C3A10046750F /* placeholder.png in Resources */,
 				1B689A611B988C3A0017EB85 /* SVProgressHUD.bundle in Resources */,
+				33615E261B99AA720046750F /* Find.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,9 +603,15 @@
 				1B689A8B1B98997E0017EB85 /* TextBoxView.swift in Sources */,
 				1B689A881B9899100017EB85 /* RegisterVC.swift in Sources */,
 				1B689A541B988C3A0017EB85 /* SDWebImageDecoder.m in Sources */,
+				33615E321B99AC7A0046750F /* ActivityDetail.swift in Sources */,
 				1B689A6D1B988CFB0017EB85 /* String.swift in Sources */,
+				33615E2A1B99AB530046750F /* AllActivityVC.swift in Sources */,
 				1B689A6F1B988CFB0017EB85 /* UIHelper.swift in Sources */,
+				33615E221B99A8290046750F /* FindVC.swift in Sources */,
 				1B689A4C1B988C3A0017EB85 /* AFURLConnectionOperation.m in Sources */,
+				33615E301B99ABF00046750F /* MapPin.swift in Sources */,
+				33615E3C1B99E19C0046750F /* AllPersonVC.swift in Sources */,
+				33615E2F1B99ABF00046750F /* AlbumDetail.swift in Sources */,
 				1B689A601B988C3A0017EB85 /* SVIndefiniteAnimatedView.m in Sources */,
 				1B689A5D1B988C3A0017EB85 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1B689A4B1B988C3A0017EB85 /* AFSecurityPolicy.m in Sources */,
@@ -552,21 +621,28 @@
 				1B689A531B988C3A0017EB85 /* SDWebImageCompat.m in Sources */,
 				1B689A871B9899100017EB85 /* RegisterStep3VC.swift in Sources */,
 				1B689A621B988C3A0017EB85 /* SVProgressHUD.m in Sources */,
+				33615E2E1B99ABF00046750F /* LocationDetail.swift in Sources */,
 				1B689A6B1B988CFB0017EB85 /* AppConfig.swift in Sources */,
 				1B689A7F1B9897A70017EB85 /* LoginVC.swift in Sources */,
 				1B689A491B988C3A0017EB85 /* AFHTTPSessionManager.m in Sources */,
 				1B689A5A1B988C3A0017EB85 /* UIImage+GIF.m in Sources */,
 				33615E0C1B994FC70046750F /* ProfileVC.swift in Sources */,
+				33615E431B9A01E70046750F /* ContactVC.swift in Sources */,
 				1B689A5B1B988C3A0017EB85 /* UIImage+MultiFormat.m in Sources */,
 				1B689A861B9899100017EB85 /* RegisterStep2VC.swift in Sources */,
 				33615E171B997AC00046750F /* ChangeHDYNameVC.swift in Sources */,
+				33615E411B9A002B0046750F /* HuoDongYouVC.swift in Sources */,
 				1B689A4D1B988C3A0017EB85 /* AFURLRequestSerialization.m in Sources */,
 				1BFB8E2C1B9927F700C018B2 /* MeVC.swift in Sources */,
 				1B689A581B988C3A0017EB85 /* SDWebImagePrefetcher.m in Sources */,
 				1B689A4F1B988C3A0017EB85 /* AFURLSessionManager.m in Sources */,
 				1B689A811B9897D10017EB85 /* RootVC.swift in Sources */,
+				33615E3A1B99DC3F0046750F /* AllAlbumVC.swift in Sources */,
 				1B689A501B988C3A0017EB85 /* MKAnnotationView+WebCache.m in Sources */,
+				33615E3E1B99E3410046750F /* PersonDetail.swift in Sources */,
+				33615E361B99C3CC0046750F /* AllOrganizationVC.swift in Sources */,
 				1B689A5E1B988C3A0017EB85 /* UIImageView+WebCache.m in Sources */,
+				33615E381B99C44C0046750F /* OrganizationDetail.swift in Sources */,
 				1B689A5F1B988C3A0017EB85 /* UIView+WebCacheOperation.m in Sources */,
 				1B689A571B988C3A0017EB85 /* SDWebImageManager.m in Sources */,
 				1B689A6E1B988CFB0017EB85 /* SwiftyJSON.swift in Sources */,

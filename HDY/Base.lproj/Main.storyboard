@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--活动邮-->
+        <!--Huo Dong YouVC-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="HDY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HuoDongYouVC" id="9pv-A4-QxB" customClass="HuoDongYouVC" customModule="HDY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -17,38 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="158" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="195" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fLH-gr-J4u">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="fLH-gr-J4u" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="Pdx-jX-HG8"/>
+                            <constraint firstItem="fLH-gr-J4u" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="b8a-5n-6n2"/>
+                            <constraint firstItem="fLH-gr-J4u" firstAttribute="bottom" secondItem="tsR-hK-woN" secondAttribute="bottomMargin" id="sVf-6r-UzD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fLH-gr-J4u" secondAttribute="trailing" constant="-16" id="yjA-XK-jav"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="活动邮" image="huodongmail" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="RjW-uV-Vrb">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Gbq-bu-rR1">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fLH-gr-J4u" id="hMY-rG-FQl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="-550"/>
+            <point key="canvasLocation" x="1596" y="-550"/>
         </scene>
-        <!--发现-->
+        <!--FindVC-->
         <scene sceneID="ZDL-B2-dub">
             <objects>
-                <viewController id="qLt-6i-8uV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindVC" id="qLt-6i-8uV" customClass="FindVC" customModule="HDY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XKr-g3-RR7"/>
                         <viewControllerLayoutGuide type="bottom" id="klc-ma-0jC"/>
@@ -56,13 +60,37 @@
                     <view key="view" contentMode="scaleToFill" id="RdL-3k-Hw1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-Hf-djo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="BJU-nt-RBh">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BJU-nt-RBh" id="wHh-ey-ncV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tz4-Hf-djo" firstAttribute="bottom" secondItem="RdL-3k-Hw1" secondAttribute="bottomMargin" id="8ue-z3-Cbe"/>
+                            <constraint firstItem="tz4-Hf-djo" firstAttribute="top" secondItem="RdL-3k-Hw1" secondAttribute="topMargin" id="Izf-6R-qEH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tz4-Hf-djo" secondAttribute="trailing" constant="-16" id="ORR-TO-CAJ"/>
+                            <constraint firstItem="tz4-Hf-djo" firstAttribute="leading" secondItem="RdL-3k-Hw1" secondAttribute="leadingMargin" constant="-16" id="gHD-Nn-p6b"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="发现" image="search" id="HVe-bU-flS"/>
+                    <navigationItem key="navigationItem" id="hUq-F4-P5L"/>
+                    <connections>
+                        <outlet property="tableView" destination="tz4-Hf-djo" id="r5z-X0-SEa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWx-gQ-cDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34" y="798"/>
+            <point key="canvasLocation" x="846" y="798"/>
         </scene>
         <!--风采墙-->
         <scene sceneID="wg7-f3-ORb">
@@ -115,9 +143,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="EFW-nz-0qF" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="qLt-6i-8uV" kind="relationship" relationship="viewControllers" id="Sc0-FW-EVO"/>
+                        <segue destination="CuR-9X-Wxg" kind="relationship" relationship="viewControllers" id="Sc0-FW-EVO"/>
                         <segue destination="VGL-ns-fMW" kind="relationship" relationship="viewControllers" id="ZgE-F9-DB4"/>
                     </connections>
                 </tabBarController>
@@ -205,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ld-Rp-LhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2338" y="883"/>
+            <point key="canvasLocation" x="3150" y="883"/>
         </scene>
         <!--我-->
         <scene sceneID="Br8-YW-B1i">
@@ -224,7 +252,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRw-kn-k5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1526" y="883"/>
+            <point key="canvasLocation" x="2338" y="883"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="aHk-zT-OE3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CuR-9X-Wxg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="search" id="HVe-bU-flS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AcQ-aT-aIa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qLt-6i-8uV" kind="relationship" relationship="rootViewController" id="cOO-GA-nEZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDH-6Y-XoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34" y="798"/>
+        </scene>
+        <!--活动邮-->
+        <scene sceneID="azP-fJ-rVx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EFW-nz-0qF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="活动邮" image="huodongmail" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AtU-4b-ti0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="xTz-GI-l7O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFg-2m-h0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784" y="-550"/>
         </scene>
     </scenes>
     <resources>

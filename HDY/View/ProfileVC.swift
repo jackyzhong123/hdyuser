@@ -61,13 +61,21 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
     //MARK: 网络调用返回
     override func requestDataComplete(response:AnyObject,tag:Int)
     {
-        SVProgressHUD.dismiss()
-        if (tag == 99)
+        if (tag == 98)
         {
+            SVProgressHUD.dismiss()
             AppConfig.sharedAppConfig.Portrait = response as! String
             AppConfig.sharedAppConfig.save()
             tableView.reloadData()
-             NSNotificationCenter.defaultCenter().postNotificationName(AppConfig.NF_ChangeUerProfile, object: nil, userInfo: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName(AppConfig.NF_ChangeUerProfile, object: nil, userInfo: nil)
+
+
+        }
+        
+        if (tag == 99)
+        {
+            let parameter = ["imageurl": response as! String ]
+            self.httpPostApi(AppConfig.Url_changeUserPortrait, body: parameter, tag: 98)
             
         }
         if (response is NSDictionary)

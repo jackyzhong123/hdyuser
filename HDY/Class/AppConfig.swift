@@ -23,7 +23,7 @@ class AppConfig: NSObject {
     static var  Url_NewOrgLogin = "api/Login/OrgLogin"
     
     //获得用户档案
-    static var Url_getProfile="api/HuoDongService/getProfile"
+    static var Url_getProfile="api/Login/getProfile"
     
     //上传头像
     static var Url_uploadImage="api/HdyUploadImageByUser"
@@ -64,6 +64,14 @@ class AppConfig: NSObject {
     static var Url_ChangeRealName = "api/Login/ChangeRealName"
     
     static var Url_ChangeHDYName = "api/Login/ChangeHDYName"
+    
+    static var Url_ActivityList = "api/Activity/ActivityList"
+    
+    static var Url_AlbumList = "api/Activity/AlbumList"
+    
+    static var Url_PersonList = "api/Contact/PersonList"
+    
+    static var Url_OrgList = "api/Contact/OrgList"
     
     
     ////////////////////////////=== Notification
