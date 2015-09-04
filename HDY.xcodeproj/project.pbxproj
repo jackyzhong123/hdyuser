@@ -55,6 +55,8 @@
 		1B689A871B9899100017EB85 /* RegisterStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B689A841B9899100017EB85 /* RegisterStep3VC.swift */; };
 		1B689A881B9899100017EB85 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B689A851B9899100017EB85 /* RegisterVC.swift */; };
 		1B689A8B1B98997E0017EB85 /* TextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B689A8A1B98997E0017EB85 /* TextBoxView.swift */; };
+		1BFB8E2C1B9927F700C018B2 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8E2B1B9927F700C018B2 /* MeVC.swift */; };
+		1BFB8E2E1B99284800C018B2 /* MeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,7 +137,7 @@
 		1B689A441B988C3A0017EB85 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		1B689A451B988C3A0017EB85 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		1B689A461B988C3A0017EB85 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		1B689A631B988CFB0017EB85 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConfig.swift; path = Class/AppConfig.swift; sourceTree = "<group>"; };
+		1B689A631B988CFB0017EB85 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = AppConfig.swift; path = Class/AppConfig.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1B689A651B988CFB0017EB85 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		1B689A661B988CFB0017EB85 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		1B689A671B988CFB0017EB85 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -144,12 +146,14 @@
 		1B689A711B988D310017EB85 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1B689A761B9890640017EB85 /* HDY-bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HDY-bridging-Header.h"; sourceTree = "<group>"; };
 		1B689A771B9893860017EB85 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
-		1B689A7E1B9897A70017EB85 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = View/LoginVC.swift; sourceTree = "<group>"; };
+		1B689A7E1B9897A70017EB85 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = LoginVC.swift; path = View/LoginVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1B689A801B9897D10017EB85 /* RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
-		1B689A831B9899100017EB85 /* RegisterStep2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterStep2VC.swift; sourceTree = "<group>"; };
-		1B689A841B9899100017EB85 /* RegisterStep3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterStep3VC.swift; sourceTree = "<group>"; };
+		1B689A831B9899100017EB85 /* RegisterStep2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RegisterStep2VC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1B689A841B9899100017EB85 /* RegisterStep3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RegisterStep3VC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1B689A851B9899100017EB85 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		1B689A8A1B98997E0017EB85 /* TextBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBoxView.swift; sourceTree = "<group>"; };
+		1BFB8E2B1B9927F700C018B2 /* MeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MeVC.swift; path = View/MeVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MeHeaderCell.swift; path = View/MeHeaderCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +391,8 @@
 				1B689A831B9899100017EB85 /* RegisterStep2VC.swift */,
 				1B689A841B9899100017EB85 /* RegisterStep3VC.swift */,
 				1B689A851B9899100017EB85 /* RegisterVC.swift */,
+				1BFB8E2B1B9927F700C018B2 /* MeVC.swift */,
+				1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BFB8E2E1B99284800C018B2 /* MeHeaderCell.swift in Sources */,
 				1B689A471B988C3A0017EB85 /* AFHTTPRequestOperation.m in Sources */,
 				1B689A6C1B988CFB0017EB85 /* Dictionary.swift in Sources */,
 				1B6899CC1B988AC90017EB85 /* SecondViewController.swift in Sources */,
@@ -534,6 +541,7 @@
 				1B689A5B1B988C3A0017EB85 /* UIImage+MultiFormat.m in Sources */,
 				1B689A861B9899100017EB85 /* RegisterStep2VC.swift in Sources */,
 				1B689A4D1B988C3A0017EB85 /* AFURLRequestSerialization.m in Sources */,
+				1BFB8E2C1B9927F700C018B2 /* MeVC.swift in Sources */,
 				1B689A581B988C3A0017EB85 /* SDWebImagePrefetcher.m in Sources */,
 				1B689A4F1B988C3A0017EB85 /* AFURLSessionManager.m in Sources */,
 				1B689A811B9897D10017EB85 /* RootVC.swift in Sources */,

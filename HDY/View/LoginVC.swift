@@ -17,27 +17,14 @@ class LoginVC: RootVC  {
     @IBOutlet weak var btnLogin: UIButton!
     
     override func viewDidLoad() {
-          self.IsNeedDoneButton = true
+        self.IsNeedDoneButton = true
         super.viewDidLoad()
-        
-        
-        // self.navigationController.navigationBar.translucent = true
-        
-        UIHelper.buildButtonFilletStyle(btnLogin, borderColor: UIHelper.mainColor)
-        // Do any additional setup after loading the view.
     }
-    
-    override func didReceiveMemoryWarning() {
-      
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     override func RenderDetail() {
-         UIHelper.SetNaviBarRightItemWithName(self, action: "toggleRightMenu:", strName: "注册")
+        UIHelper.buildButtonFilletStyle(btnLogin, borderColor: UIHelper.mainColor)
+        UIHelper.SetNaviBarRightItemWithName(self, action: "toggleRightMenu:", strName: "注册")
     }
-    
     
     
     func toggleRightMenu(sender: AnyObject)
@@ -46,13 +33,8 @@ class LoginVC: RootVC  {
     }
     
     
-    
-    
-    
-    
     //MARK: 按钮及网络调用
     @IBAction func btnLoginTapped(sender: AnyObject) {
-        
         var tag = (sender as! UIButton).tag
         if (tag==10)
         {
@@ -63,13 +45,12 @@ class LoginVC: RootVC  {
             self.view.endEditing(true)
             SVProgressHUD.showWithStatusWithBlack("请稍候")
             
-            
             let postBody=[
-                "NickName": self.txtUID.text,
+                "HDYName": self.txtUID.text,
                 "Password": self.txtPWD.text,
                 "Device":"iPhone"
             ]
-            self.httpPostApi(AppConfig.Url_NewOrgLogin, body: postBody, tag: 10)
+            self.httpPostApi(AppConfig.Url_PersonLogin, body: postBody, tag: 10)
             
             
         } else if (tag == 13)
@@ -96,16 +77,12 @@ class LoginVC: RootVC  {
                 
                 AppConfig.sharedAppConfig.AccessToken = jsonData["token"].string!
                 AppConfig.sharedAppConfig.IsCreator  = jsonData["IsCreator"].boolValue
-                AppConfig.sharedAppConfig.NickName = jsonData["NickName"].string!
+                AppConfig.sharedAppConfig.HDYName = jsonData["HDYName"].string!
                 AppConfig.sharedAppConfig.Portrait = jsonData["Portrait"].string!
-                
-                
                 AppConfig.sharedAppConfig.save()
                 SVProgressHUD.showSuccessWithStatusWithBlack("登录成功");
-                
                 var storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                self.view.window!.rootViewController = storyboard.instantiateInitialViewController() as? UIViewController
-                
+                self.view.window!.rootViewController = storyboard.instantiateInitialViewController() as? UIViewController                
             }
             
         }

@@ -29,7 +29,11 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+ 
+    
+    override func RenderDetail() {
         btnResend.layer.cornerRadius = 6;
         btnResend.layer.masksToBounds=true
         btnResend.layer.borderWidth = 1;
@@ -38,19 +42,9 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
         btnNext.layer.masksToBounds=true
         btnNext.layer.borderWidth = 1;
         btnNext.layer.borderColor = UIHelper.mainColor.CGColor;
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         txtPhone.text = strPhone;
         txtPhone.enabled = false;
-        
-        
         self.startTimer()
-        
-        
     }
     
     func startTimer()
@@ -90,22 +84,16 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
     }
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+ 
     
     
     @IBAction func btnTapped(sender: AnyObject) {
         var tag = (sender as! UIButton).tag
         if(tag == 10)//重新发送验证码
         {
-            
             if (self.txtPhone.text.length != 11) {
                 return;
             }
-            
-            
             self.view.endEditing(true)
             var alert = UIAlertView()
             alert.title = "确认手机号码"
@@ -114,7 +102,7 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
             alert.addButtonWithTitle("确定")
             alert.delegate = self;
             alert.show()
-            
+            startTimer()
             
         }
         else if(tag == 11)//提交验证码
@@ -136,19 +124,10 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
                         "mp": self.txtPhone.text,
                         "vcode":self.txtVerifyCode.text.trim()
                     ]
-
                 }
-              
-                
                 self.httpPostApi(AppConfig.Url_SMSVerify, body: parameters, tag: 11)
-                
-                
-                
             }
-            
         }
-        
-        
     }
     
     override func requestDataComplete(response:AnyObject,tag:Int)
@@ -156,22 +135,16 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
         SVProgressHUD.dismiss()
         if (tag == 11) {
             var flag = response as! Bool
-            if (flag)
+            if (!flag)
             {
                 SVProgressHUD.showErrorWithStatusWithBlack("该手机号码已经注册");
                 return;
             }
             
-//            AppConfig.sharedAppConfig.AccessToken = response.objectForKey("token") as! String;
-//            AppConfig.sharedAppConfig.Portrait =  response.objectForKey("Portrait") as! String;
-//            AppConfig.sharedAppConfig.NickName =  response.objectForKey("NickName") as! String;
-//            AppConfig.sharedAppConfig.save()
             SVProgressHUD.showSuccessWithStatusWithBlack("验证成功");
             if(!isFromChangMobile)
             {
-               // SVProgressHUD.showSuccessWithStatusWithBlack("验证成功");
                 var vc:RegisterStep3VC = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "RegisterStep3VC") as! RegisterStep3VC
-                
                 vc.strPhone = self.txtPhone.text.trim();
                 vc.countryID = 0;
                 vc.strVcode = self.txtVerifyCode.text
@@ -191,6 +164,17 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
                 
                 self.httpPostApi("api/HuoDongService/mobilechange", body: body, tag: 98)
             }
+            
+            
+           // self.httpGetApi(AppConfig.Url_getProfile, body: nil, tag: 12)
+//            AppConfig.sharedAppConfig.AccessToken = response.objectForKey("token") as! String;
+//            AppConfig.sharedAppConfig.Portrait =  response.objectForKey("Portrait") as! String;
+//            AppConfig.sharedAppConfig.HDYName =  response.objectForKey("HDYName") as! String;
+//            AppConfig.sharedAppConfig.save()
+            
+            
+        }else if (tag == 12)
+        {
             
         }
         else if(tag == 98)

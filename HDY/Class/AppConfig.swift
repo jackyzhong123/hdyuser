@@ -110,7 +110,7 @@ class AppConfig: NSObject {
     //MARK: 一些变量
     var AccessToken:String = ""
     var IsCreator = false
-    var NickName = ""
+    var HDYName = ""
     var Portrait = ""
     //MARK: 一些函数
     func isUserLogin()->Bool
@@ -129,7 +129,7 @@ class AppConfig: NSObject {
         var varData = data as! NSData;
         let dataDir:NSDictionary =  NSJSONSerialization.JSONObjectWithData(varData, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSDictionary
         
-        AppConfig.sharedAppConfig.NickName = dataDir.objectForKey("Name") as! String
+        AppConfig.sharedAppConfig.HDYName = dataDir.objectForKey("Name") as! String
         AppConfig.sharedAppConfig.Portrait = dataDir.objectForKey("Portrait") as! String
         AppConfig.sharedAppConfig.save()
     NSNotificationCenter.defaultCenter().postNotificationName("ReloadUserInfo_Notiication", object: nil)
@@ -167,13 +167,13 @@ class AppConfig: NSObject {
             ud.removeObjectForKey("Configuration_Portrait")
         }
         
-        if(!self.NickName.isNullOrEmpty())
+        if(!self.HDYName.isNullOrEmpty())
         {
-            ud.setObject(self.NickName, forKey: "Configuration_NickName")
+            ud.setObject(self.HDYName, forKey: "Configuration_HDYName")
         }
         else
         {
-            ud.removeObjectForKey("Configuration_NickName")
+            ud.removeObjectForKey("Configuration_HDYName")
         }
         
         
@@ -200,9 +200,9 @@ class AppConfig: NSObject {
             self.AccessToken = ud.objectForKey("Configuration_Token") as! String;
         }
       
-        if(ud.objectForKey("Configuration_NickName") != nil)
+        if(ud.objectForKey("Configuration_HDYName") != nil)
         {
-            self.NickName = ud.objectForKey("Configuration_NickName") as! String;
+            self.HDYName = ud.objectForKey("Configuration_HDYName") as! String;
         }
         if(ud.objectForKey("Configuration_Portrait") != nil)
         {
