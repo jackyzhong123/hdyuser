@@ -32,29 +32,86 @@ class RootVC: UIViewController {
         if (IsNeedDoneButton)
         {
             //设置需要完成按钮
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "doneButtonShow:", name: UIKeyboardDidShowNotification, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+            
+  
+            
         }
         
     }
     
     //给键盘增加完成输入的按钮
-    func doneButtonShow (notification:NSNotification)
+    func handleKeyboardDidShow (notification:NSNotification)
     {
-        _doneButton = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIButton
         
-        _doneButton.frame = CGRectMake(0, 228, 70, 35);
-        _doneButton.setTitle("完成编辑", forState: UIControlState.Normal)
-        _doneButton.addTarget(self, action: "hideKeyboard", forControlEvents: UIControlEvents.TouchUpInside);
+        var info:NSDictionary = notification.userInfo!
+        var keyboardFrame:CGRect?;
+        info.objectForKey(UIKeyboardFrameEndUserInfoKey)?.getValue(&keyboardFrame)
+        var kbSize:CGSize = info.objectForKey(UIKeyboardFrameEndUserInfoKey)!.CGRectValue().size
+        var distanceToMove:CGFloat = kbSize.height
+        
+        if (self._doneButton == nil)
+        {
+            _doneButton = UIButton.buttonWithType(UIButtonType.ContactAdd) as! UIButton
+            
+        }
+        var exitBtFrame:CGRect = CGRectMake(self.view.frame.size.width - 40, self.view.frame.size.height - distanceToMove, 40.0, 30.0)
+        
+        _doneButton.frame = exitBtFrame
+      
+        _doneButton.setImage(UIImage(named: "Photo_Favorites"), forState: UIControlState.Normal)
+            
         self.view.addSubview(_doneButton)
+            
+        _doneButton.hidden = false;
         
+
+        self.adjustPanelsWithKeyBordHeight(distanceToMove)
+        _doneButton.addTarget(self, action: "CancelBackKeyboard:", forControlEvents: UIControlEvents.TouchDown)
+      
+        
+        
+        
+        
+        
+        
+        
+    }
+    func adjustPanelsWithKeyBordHeight(height:CGFloat)
+    {
+        if (_doneButton != nil)
+        {
+            var exitBtFrame:CGRect = CGRectMake(self.view.frame.size.width - 40, self.view.frame.size.height - height - 30 , 40.0, 30.0)
+            _doneButton.frame = exitBtFrame
+        }
+        self.view.addSubview(_doneButton)
+    }
+ 
+    func handleKeyboardWillHide (notification:NSNotification)
+    {
+        if (_doneButton.hidden == false)
+        {
+            _doneButton.hidden = true
+        }
+    }
+    
+   
+    
+    func CancelBackKeyboard(sender:AnyObject?)
+    {
+        self.view.endEditing(true)
+
     }
     
     func hideKeyboard(){
-         //_doneButton.hidden = true
-        _doneButton.removeFromSuperview()
+          _doneButton.hidden = true
+        
        
-        self.view.endEditing(true)
-    }
+        //_doneButton.removeFromSuperview()
+       
+          }
     
     
     override func viewDidAppear(animated: Bool) {

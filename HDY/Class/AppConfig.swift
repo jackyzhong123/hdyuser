@@ -135,7 +135,7 @@ class AppConfig: NSObject {
     var HDYName = ""
     var Portrait = ""
     var RealName = ""
-    var IsTest = true
+    var IsTest = false
     
     //MARK: 一些函数
     func isUserLogin()->Bool
