@@ -96,7 +96,7 @@ class RegisterStep3VC: RootVC {
                 AppConfig.sharedAppConfig.IsCreator  = true
                 AppConfig.sharedAppConfig.HDYName = jsonData["HDYName"].string!
                 AppConfig.sharedAppConfig.Portrait = jsonData["Portrait"].string!       
-                
+                 AppConfig.sharedAppConfig.MySex = jsonData["MySex"].intValue
                 AppConfig.sharedAppConfig.save()
                 SVProgressHUD.showSuccessWithStatusWithBlack("登录成功");
                 

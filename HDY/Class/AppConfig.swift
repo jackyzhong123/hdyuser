@@ -63,6 +63,8 @@ class AppConfig: NSObject {
     
     static var Url_ChangeRealName = "api/Login/ChangeRealName"
     
+    static var Url_ChangeSex = "api/Login/ChangeSex"
+    
     static var Url_ChangeHDYName = "api/Login/ChangeHDYName"
     
     static var Url_ActivityList = "api/Activity/ActivityList"
@@ -136,6 +138,7 @@ class AppConfig: NSObject {
     var Portrait = ""
     var RealName = ""
     var IsTest = false
+    var MySex:Int?
     
     //MARK: 一些函数
     func isUserLogin()->Bool
@@ -158,6 +161,7 @@ class AppConfig: NSObject {
         AppConfig.sharedAppConfig.Portrait = dataDir.objectForKey("Portrait") as! String
         AppConfig.sharedAppConfig.RealName = dataDir.objectForKey("RealName") as! String
         AppConfig.sharedAppConfig.IsTest = dataDir.objectForKey("IsTest") as! Bool
+        AppConfig.sharedAppConfig.MySex = dataDir.objectForKey("MySex") as! Int
         AppConfig.sharedAppConfig.save()
         NSNotificationCenter.defaultCenter().postNotificationName("ReloadUserInfo_Notiication", object: nil)
     }
@@ -182,6 +186,17 @@ class AppConfig: NSObject {
         {
             ud.removeObjectForKey("Configuration_Token")
         }
+        
+        
+        if(self.MySex != nil)
+        {
+            ud.setInteger(MySex!, forKey: "Configuration_MySex")
+        }
+        else
+        {
+            ud.removeObjectForKey("Configuration_MySex")
+        }
+        
         
         ud.setBool(IsCreator, forKey: "Configuration_CurrentIsCreator")
         ud.setBool(IsTest, forKey: "Configuration_CurrentIsTest")
@@ -212,7 +227,7 @@ class AppConfig: NSObject {
         {
             ud.removeObjectForKey("Configuration_RealName")
         }
-        
+        ud.synchronize()
         
         return true
     }
@@ -258,6 +273,11 @@ class AppConfig: NSObject {
         if(ud.objectForKey("Configuration_CurrentIsTest") != nil)
         {
             self.IsTest = ud.boolForKey("Configuration_CurrentIsTest")
+        }
+        
+        if(ud.objectForKey("Configuration_MySex") != nil)
+        {
+            self.MySex = ud.integerForKey("Configuration_MySex")
         }
         
     }

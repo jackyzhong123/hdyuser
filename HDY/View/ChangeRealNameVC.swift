@@ -55,8 +55,9 @@ class ChangeRealNameVC: RootVC   {
         {
             AppConfig.sharedAppConfig.RealName = response as! String
             AppConfig.sharedAppConfig.save()
-             NSNotificationCenter.defaultCenter().postNotificationName(AppConfig.NF_ChangeUerProfile, object: nil, userInfo: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName(AppConfig.NF_ChangeUerProfile, object: nil, userInfo: nil)
             self.navigationController?.popViewControllerAnimated(true)
+            
             return
         }
         

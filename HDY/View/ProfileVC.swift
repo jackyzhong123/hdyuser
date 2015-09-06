@@ -20,8 +20,7 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
     let CellArray1 =   [
         ["name":"名字","icon":"","targetVC":"ChangeRealNameVC"],
         ["name":"活动邮号","icon":"","targetVC":"ChangeHDYNameVC"],
-        
-        //  ["name":"性别","icon":"","targetVC":"MyAlbumListVC"],
+        ["name":"性别","icon":"","targetVC":"ChangeSexVC"],
         // ["name":"更换手机","icon":"","targetVC":"MyLocationVC"],
         //["name":"更换密码","icon":"","targetVC":"MyPeopleVC"]
     ]
@@ -103,6 +102,9 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
         {
             var index = indexPath.row;
             var photoItem:NSDictionary! = CellArray1[index] as NSDictionary
+        
+            
+            
             var vc:UIViewController  = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: photoItem["targetVC"] as! String)
             
             self.navigationController?.pushViewController(vc, animated: true)
@@ -178,7 +180,19 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
                 break;
             case 1:
                 cell.detailTextLabel?.text = AppConfig.sharedAppConfig.HDYName
-                
+            case 2:
+                var mysex:String?
+                if (AppConfig.sharedAppConfig.MySex == 0)
+                {
+                    mysex = "男"
+                }else if (AppConfig.sharedAppConfig.MySex == 1)
+                {
+                    mysex = "女"
+                }else
+                {
+                    mysex = "请选择"
+                }
+                cell.detailTextLabel?.text = mysex
                 break;
             default:
                 break;

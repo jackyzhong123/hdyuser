@@ -55,6 +55,7 @@
 		1B689A871B9899100017EB85 /* RegisterStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B689A841B9899100017EB85 /* RegisterStep3VC.swift */; };
 		1B689A881B9899100017EB85 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B689A851B9899100017EB85 /* RegisterVC.swift */; };
 		1B689A8B1B98997E0017EB85 /* TextBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B689A8A1B98997E0017EB85 /* TextBoxView.swift */; };
+		1BB0B2011B9C8CAE00FD411F /* ChangeSexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB0B2001B9C8CAE00FD411F /* ChangeSexVC.swift */; };
 		1BFB8E2C1B9927F700C018B2 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8E2B1B9927F700C018B2 /* MeVC.swift */; };
 		1BFB8E2E1B99284800C018B2 /* MeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */; };
 		33615E0C1B994FC70046750F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E0B1B994FC70046750F /* ProfileVC.swift */; };
@@ -174,6 +175,7 @@
 		1B689A841B9899100017EB85 /* RegisterStep3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RegisterStep3VC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1B689A851B9899100017EB85 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		1B689A8A1B98997E0017EB85 /* TextBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBoxView.swift; sourceTree = "<group>"; };
+		1BB0B2001B9C8CAE00FD411F /* ChangeSexVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSexVC.swift; path = View/ChangeSexVC.swift; sourceTree = "<group>"; };
 		1BFB8E2B1B9927F700C018B2 /* MeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MeVC.swift; path = View/MeVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MeHeaderCell.swift; path = View/MeHeaderCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		33615E0B1B994FC70046750F /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = View/ProfileVC.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				33615E0B1B994FC70046750F /* ProfileVC.swift */,
 				33615E141B996C0B0046750F /* ChangeRealNameVC.swift */,
 				33615E161B997AC00046750F /* ChangeHDYNameVC.swift */,
+				1BB0B2001B9C8CAE00FD411F /* ChangeSexVC.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				1B689A5E1B988C3A0017EB85 /* UIImageView+WebCache.m in Sources */,
 				33615E381B99C44C0046750F /* OrganizationDetail.swift in Sources */,
 				1B689A5F1B988C3A0017EB85 /* UIView+WebCacheOperation.m in Sources */,
+				1BB0B2011B9C8CAE00FD411F /* ChangeSexVC.swift in Sources */,
 				1B689A571B988C3A0017EB85 /* SDWebImageManager.m in Sources */,
 				1B689A6E1B988CFB0017EB85 /* SwiftyJSON.swift in Sources */,
 				1B6899C81B988AC90017EB85 /* AppDelegate.swift in Sources */,
@@ -736,6 +740,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -781,6 +786,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

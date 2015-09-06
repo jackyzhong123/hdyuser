@@ -22,22 +22,19 @@ class RootVC: UIViewController {
     
     var _doneButton:UIButton!;
     var IsNeedDoneButton:Bool = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.translucent = false  //不计Controller 高度
         self.navigationController?.navigationBar.hidden = false   //显示navigationbar
-
+        
         RenderDetail()
+        
         if (IsNeedDoneButton)
         {
             //设置需要完成按钮
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
-            
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleKeyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-            
-  
-            
         }
         
     }
@@ -45,40 +42,33 @@ class RootVC: UIViewController {
     //给键盘增加完成输入的按钮
     func handleKeyboardDidShow (notification:NSNotification)
     {
-        
         var info:NSDictionary = notification.userInfo!
         var keyboardFrame:CGRect?;
         info.objectForKey(UIKeyboardFrameEndUserInfoKey)?.getValue(&keyboardFrame)
         var kbSize:CGSize = info.objectForKey(UIKeyboardFrameEndUserInfoKey)!.CGRectValue().size
         var distanceToMove:CGFloat = kbSize.height
-        
         if (self._doneButton == nil)
         {
             _doneButton = UIButton.buttonWithType(UIButtonType.ContactAdd) as! UIButton
-            
         }
         var exitBtFrame:CGRect = CGRectMake(self.view.frame.size.width - 40, self.view.frame.size.height - distanceToMove, 40.0, 30.0)
-        
         _doneButton.frame = exitBtFrame
-      
-        _doneButton.setImage(UIImage(named: "Photo_Favorites"), forState: UIControlState.Normal)
-            
+     
+        _doneButton.setImage(UIImage(named: "done"), forState: UIControlState.Normal)
         self.view.addSubview(_doneButton)
-            
         _doneButton.hidden = false;
-        
-
         self.adjustPanelsWithKeyBordHeight(distanceToMove)
         _doneButton.addTarget(self, action: "CancelBackKeyboard:", forControlEvents: UIControlEvents.TouchDown)
-      
-        
-        
-        
-        
-        
-        
-        
     }
+    
+    func handleKeyboardWillHide (notification:NSNotification)
+    {
+        if (_doneButton.hidden == false)
+        {
+            _doneButton.hidden = true
+        }
+    }
+    
     func adjustPanelsWithKeyBordHeight(height:CGFloat)
     {
         if (_doneButton != nil)
@@ -88,40 +78,34 @@ class RootVC: UIViewController {
         }
         self.view.addSubview(_doneButton)
     }
- 
-    func handleKeyboardWillHide (notification:NSNotification)
-    {
-        if (_doneButton.hidden == false)
-        {
-            _doneButton.hidden = true
-        }
-    }
     
-   
+    
+    
+    
     
     func CancelBackKeyboard(sender:AnyObject?)
     {
         self.view.endEditing(true)
-
+        
     }
     
     func hideKeyboard(){
-          _doneButton.hidden = true
+        _doneButton.hidden = true
         
-       
+        
         //_doneButton.removeFromSuperview()
-       
-          }
+        
+    }
     
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-    
+        
     }
     
-
+    
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning() 
+        super.didReceiveMemoryWarning()
     }
     
     //绑定页面点击事件
@@ -147,7 +131,7 @@ class RootVC: UIViewController {
         return 1
     }
     
-
+    
     
     //用于同步头像
     func syncUserInfo()
@@ -157,12 +141,12 @@ class RootVC: UIViewController {
     
     
     
-
+    
     // MARK: - 网络访问
     func generateRequest(relative:String)->NSMutableURLRequest
     {
         var oriUrl = AppConfig.SERVICE_ROOT_PATH + relative
-       // var strUrl = oriUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        // var strUrl = oriUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         var url:NSURL = NSURL(string: oriUrl)!
         var token = AppConfig.sharedAppConfig.getAuthorizationString()
         
@@ -218,7 +202,7 @@ class RootVC: UIViewController {
                 {
                     self.requestDataFailed("服务器有错误")
                 }
-
+                
                 
         })
         operation.start()
@@ -232,7 +216,7 @@ class RootVC: UIViewController {
             let parameterString = body!.stringFromHttpParameters()
             if (apiname.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "?")).count > 1)
             {
-                 apiname = apiname + "&" + parameterString
+                apiname = apiname + "&" + parameterString
             }else
             {
                 apiname = apiname + "?" + parameterString
@@ -274,17 +258,17 @@ class RootVC: UIViewController {
                     AppConfig.sharedAppConfig.userLogout()
                 }else
                 {
-                     self.requestDataFailed("服务器有错误")
+                    self.requestDataFailed("服务器有错误")
                 }
-               
                 
                 
-           //
+                
+                //
                 
         })
         operation.start()
     }
-
+    
     func uploadImage(imageData:NSData,tag:Int)
     {
         
@@ -324,15 +308,15 @@ class RootVC: UIViewController {
                 {
                     self.requestDataFailed("服务器有错误")
                 }
-
+                
                 
         })
         operation.start()
     }
-
+    
     func handleHttpResponse(body:AnyObject,tag:Int)
     {
-    
+        
         
         var varData = body as! NSData;
         let dataDir:NSDictionary =  NSJSONSerialization.JSONObjectWithData(varData, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSDictionary
@@ -363,7 +347,7 @@ class RootVC: UIViewController {
         }
         
     }
-
+    
     //网络访问成功
     func requestDataComplete(response:AnyObject,tag:Int)
     {
@@ -386,12 +370,12 @@ class RootVC: UIViewController {
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

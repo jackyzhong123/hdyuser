@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        if (AppConfig.sharedAppConfig.IsTest)
+    if (AppConfig.sharedAppConfig.IsTest)
+        //if (true)
         {
             AppConfig.SERVICE_ROOT_PATH = "http://192.168.1.26:47897/"
         }else

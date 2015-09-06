@@ -79,6 +79,7 @@ class LoginVC: RootVC  {
                 AppConfig.sharedAppConfig.IsCreator  = jsonData["IsCreator"].boolValue
                 AppConfig.sharedAppConfig.HDYName = jsonData["HDYName"].string!
                 AppConfig.sharedAppConfig.Portrait = jsonData["Portrait"].string!
+                AppConfig.sharedAppConfig.MySex = jsonData["MySex"].intValue
                 AppConfig.sharedAppConfig.save()
                 SVProgressHUD.showSuccessWithStatusWithBlack("登录成功");
                 var storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
