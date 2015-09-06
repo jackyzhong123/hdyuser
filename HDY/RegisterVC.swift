@@ -80,7 +80,7 @@ class RegisterVC: RootVC ,UIAlertViewDelegate {
             
             
             
-            self.httpGetApi("api/General/SendSMS", body:parameters, tag: 11)
+            self.httpGetApi(AppConfig.Url_SendSMS, body:parameters, tag: 11)
             
        }
         

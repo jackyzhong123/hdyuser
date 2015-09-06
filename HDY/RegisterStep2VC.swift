@@ -117,8 +117,11 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
                     parameters = [
                         "mp": self.txtPhone.text,
                         "vcode":self.txtVerifyCode.text.trim(),
-                        "type":"PersonRegister"
+                        "type":AppConfig.IsUserVersion ? "PersonRegister":"OrgRegister"
                     ]
+                    
+                    self.httpPostApi(AppConfig.Url_SMSVerify, body: parameters, tag: 11)
+                    return
                 }else{
                      parameters = [
                         "mp": self.txtPhone.text,
@@ -134,16 +137,22 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
     {
         SVProgressHUD.dismiss()
         if (tag == 11) {
-            var flag = response as! Bool
-            if (!flag)
-            {
-                SVProgressHUD.showErrorWithStatusWithBlack("该手机号码已经注册");
-                return;
-            }
+         
             
             SVProgressHUD.showSuccessWithStatusWithBlack("验证成功");
             if(!isFromChangMobile)
             {
+                if (!isFromFindPwd)
+                {
+                    var flag = response as! Bool
+                    if (!flag)
+                    {
+                        SVProgressHUD.showErrorWithStatusWithBlack("该手机号码已经注册");
+                        return;
+                    }
+                    
+                }
+             
                 var vc:RegisterStep3VC = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "RegisterStep3VC") as! RegisterStep3VC
                 vc.strPhone = self.txtPhone.text.trim();
                 vc.countryID = 0;
@@ -166,11 +175,7 @@ class RegisterStep2VC: RootVC,UIAlertViewDelegate {
             }
             
             
-           // self.httpGetApi(AppConfig.Url_getProfile, body: nil, tag: 12)
-//            AppConfig.sharedAppConfig.AccessToken = response.objectForKey("token") as! String;
-//            AppConfig.sharedAppConfig.Portrait =  response.objectForKey("Portrait") as! String;
-//            AppConfig.sharedAppConfig.HDYName =  response.objectForKey("HDYName") as! String;
-//            AppConfig.sharedAppConfig.save()
+ 
             
             
         }else if (tag == 12)

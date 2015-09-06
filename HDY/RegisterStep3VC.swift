@@ -1,4 +1,4 @@
-//
+  //
 //  RegisterStep3VC.swift
 //  HDYAdmin
 //
@@ -63,7 +63,8 @@ class RegisterStep3VC: RootVC {
                 let parameters = [
                     "Mobile": strPhone,
                     "Password": txtPwd.text,
-                    "Code":strVcode
+                    "Code":strVcode,
+                    "IsOrganization":!AppConfig.IsUserVersion
                 ]
                 self.httpPostApi(AppConfig.Url_ResetPwd, body: parameters, tag: 12)
             }
@@ -87,11 +88,12 @@ class RegisterStep3VC: RootVC {
     override func requestDataComplete(response:AnyObject,tag:Int)
     {
         
-        if (response is NSDictionary)
-        {
-            var jsonData=JSON(response)
+       
+        
             if (tag == 11)
             {
+               
+                var jsonData=JSON(response)
                 AppConfig.sharedAppConfig.AccessToken = jsonData["token"].string!
                 AppConfig.sharedAppConfig.IsCreator  = true
                 AppConfig.sharedAppConfig.HDYName = jsonData["HDYName"].string!
@@ -106,18 +108,18 @@ class RegisterStep3VC: RootVC {
                 
             }else if (tag == 12)
             {
-                
-                if (jsonData["code"] == 1)
+                var result = response as! Int
+                if (result == 1)
                 {
                     SVProgressHUD.showSuccessWithStatusWithBlack("设置成功");
                     var vc:LoginVC = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "LoginVC") as! LoginVC
                     //  vc.isBackToHome = true;
                     self.view.window?.rootViewController = vc
-                }else if jsonData["code"] == 2
+                }else if result == 2
                 {
                     SVProgressHUD.showErrorWithStatusWithBlack("不存在该手机号");
                     
-                }else if jsonData["code"] == 3
+                }else if result == 3
                 {
                     SVProgressHUD.showErrorWithStatusWithBlack("修改失败");
                 }
@@ -130,15 +132,15 @@ class RegisterStep3VC: RootVC {
             
             
             
-        }
-        SVProgressHUD.showSuccessWithStatusWithBlack("验证成功");
-        var vc:RegisterStep3VC = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "RegisterStep3VC") as! RegisterStep3VC
-        
-        //        vc.strPhone = self.txtPhone.text.trim();
-        //        vc.countryID = 0;
-        //        vc.strVcode = self.txtVerifyCode.text
-        //        vc.isFromFindPwd = self.isFromFindPwd
-        self.navigationController?.pushViewController(vc, animated: true)
+     
+//        SVProgressHUD.showSuccessWithStatusWithBlack("验证成功");
+//        var vc:RegisterStep3VC = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "RegisterStep3VC") as! RegisterStep3VC
+//        
+//        //        vc.strPhone = self.txtPhone.text.trim();
+//        //        vc.countryID = 0;
+//        //        vc.strVcode = self.txtVerifyCode.text
+//        //        vc.isFromFindPwd = self.isFromFindPwd
+//        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

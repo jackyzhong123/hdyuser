@@ -14,6 +14,10 @@ import UIKit
 
 class AppConfig: NSObject {
     
+    //对个人版本和组织号版本，各不一样
+    static var  IsUserVersion  = true
+    
+    
     ////////////////////////////访问字符串
     //MARK: 一些基本的配置
     static var SERVICE_ROOT_PATH = "http://192.168.1.26:47897/"
@@ -21,6 +25,9 @@ class AppConfig: NSObject {
     //MARK: 访问服务地址的配置
     //手机号登录
     static var  Url_NewOrgLogin = "api/Login/OrgLogin"
+    
+    //发送短信
+    static var Url_SendSMS = "api/General/SendSMS"
     
     //获得用户档案
     static var Url_getProfile="api/Login/getProfile"

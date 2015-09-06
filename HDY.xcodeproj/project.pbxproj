@@ -58,6 +58,7 @@
 		1BB0B2011B9C8CAE00FD411F /* ChangeSexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB0B2001B9C8CAE00FD411F /* ChangeSexVC.swift */; };
 		1BFB8E2C1B9927F700C018B2 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8E2B1B9927F700C018B2 /* MeVC.swift */; };
 		1BFB8E2E1B99284800C018B2 /* MeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */; };
+		331BDD131B9CA225005F20F2 /* FindPwdStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331BDD121B9CA225005F20F2 /* FindPwdStep1.swift */; };
 		33615E0C1B994FC70046750F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E0B1B994FC70046750F /* ProfileVC.swift */; };
 		33615E151B996C0B0046750F /* ChangeRealNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E141B996C0B0046750F /* ChangeRealNameVC.swift */; };
 		33615E171B997AC00046750F /* ChangeHDYNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E161B997AC00046750F /* ChangeHDYNameVC.swift */; };
@@ -178,6 +179,7 @@
 		1BB0B2001B9C8CAE00FD411F /* ChangeSexVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeSexVC.swift; path = View/ChangeSexVC.swift; sourceTree = "<group>"; };
 		1BFB8E2B1B9927F700C018B2 /* MeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MeVC.swift; path = View/MeVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1BFB8E2D1B99284800C018B2 /* MeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MeHeaderCell.swift; path = View/MeHeaderCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		331BDD121B9CA225005F20F2 /* FindPwdStep1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPwdStep1.swift; sourceTree = "<group>"; };
 		33615E0B1B994FC70046750F /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = View/ProfileVC.swift; sourceTree = "<group>"; };
 		33615E141B996C0B0046750F /* ChangeRealNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeRealNameVC.swift; path = View/ChangeRealNameVC.swift; sourceTree = "<group>"; };
 		33615E161B997AC00046750F /* ChangeHDYNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeHDYNameVC.swift; path = View/ChangeHDYNameVC.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				33615E141B996C0B0046750F /* ChangeRealNameVC.swift */,
 				33615E161B997AC00046750F /* ChangeHDYNameVC.swift */,
 				1BB0B2001B9C8CAE00FD411F /* ChangeSexVC.swift */,
+				331BDD121B9CA225005F20F2 /* FindPwdStep1.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				1B689A571B988C3A0017EB85 /* SDWebImageManager.m in Sources */,
 				1B689A6E1B988CFB0017EB85 /* SwiftyJSON.swift in Sources */,
 				1B6899C81B988AC90017EB85 /* AppDelegate.swift in Sources */,
+				331BDD131B9CA225005F20F2 /* FindPwdStep1.swift in Sources */,
 				1B6899CA1B988AC90017EB85 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
