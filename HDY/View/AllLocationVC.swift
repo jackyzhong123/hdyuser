@@ -1,22 +1,23 @@
 //
-//  AllOrganiztionVC.swift
+//  AllLocationVC.swift
 //  HDY
 //
-//  Created by Sky on 15/9/4.
+//  Created by Sky on 15/9/5.
 //  Copyright (c) 2015年 edonesoft. All rights reserved.
 //
-
 
 import UIKit
 
 
 
 
-class AllOrganizationVC: RootVC ,UITableViewDelegate,UITableViewDataSource,MGSwipeTableCellDelegate {
+
+
+class AllLocationVC: RootVC ,UITableViewDelegate,UITableViewDataSource,MGSwipeTableCellDelegate {
     
     
     //MARK: 页面变量
-    var listData:Array<PersonDetail> = []
+    var listData:Array<LocationDetail> = []
     let cellIdentifier:String = "Cell"
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,7 +36,7 @@ class AllOrganizationVC: RootVC ,UITableViewDelegate,UITableViewDataSource,MGSwi
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.httpGetApi(AppConfig.Url_OrgList , body: nil, tag: 11)
+        self.httpGetApi(AppConfig.Url_LocationList , body: nil, tag: 11)
     }
     
     //MARK: 按钮点击事件
@@ -55,15 +56,12 @@ class AllOrganizationVC: RootVC ,UITableViewDelegate,UITableViewDataSource,MGSwi
                 for itemObj in dataArray
                 {
                     if let itemDic = itemObj as? NSDictionary{
-                        var data=PersonDetail(dict: itemDic)
+                        var data=LocationDetail(dict: itemDic)
                         listData.append(data)
                     }
                 }
                 self.tableView.reloadData()
             }
-        }else if(tag == 12)
-        {
-            self.httpGetApi(AppConfig.Url_OrgList , body: nil, tag: 11)
         }
         
     }
@@ -86,17 +84,20 @@ class AllOrganizationVC: RootVC ,UITableViewDelegate,UITableViewDataSource,MGSwi
         var cell:MGSwipeTableCell =  tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! MGSwipeTableCell
         var obj = listData[indexPath.row]
         
-        cell.textLabel?.text = obj.HDYName
+        cell.textLabel?.text = obj.LocationName
+        cell.detailTextLabel?.text = obj.LocationAddress
         
-        cell.imageView!.sd_setImageWithURL(NSURL(string:obj.Portrait)!, placeholderImage: UIImage(named: "placeholder.png"))
+          cell.imageView?.image =  UIImage(named: "setting_placeSearch")
+        
         
         cell.tag = indexPath.row
         
         
-        cell.rightButtons = [MGSwipeButton(title: "关注", backgroundColor: UIColor.grayColor())]
+        cell.rightButtons = [MGSwipeButton(title: "收藏", backgroundColor: UIColor.grayColor())]
         
         cell.rightSwipeSettings.transition = MGSwipeTransition.Rotate3D;
         cell.delegate = self;
+        
         
         return cell;
     }
@@ -104,11 +105,11 @@ class AllOrganizationVC: RootVC ,UITableViewDelegate,UITableViewDataSource,MGSwi
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         // println("\(cell.textLabel?.text)")
         let parameter = [
-            "UserName" : listData[cell.tag].UserName
+            "LocationId" : listData[cell.tag].Id
             
         ]
         
-        self.httpGetApi(AppConfig.Url_MakeFollow, body: parameter, tag: 12)
+        self.httpGetApi(AppConfig.Url_MakeFavLocation, body: parameter, tag: 12)
         return true
     }
     

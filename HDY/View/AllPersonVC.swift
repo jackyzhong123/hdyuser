@@ -12,7 +12,7 @@ import UIKit
 
 
 
-class AllPersonVC: RootVC ,UITableViewDelegate,UITableViewDataSource {
+class AllPersonVC: RootVC ,UITableViewDelegate,UITableViewDataSource,MGSwipeTableCellDelegate {
     
     
     //MARK: 页面变量

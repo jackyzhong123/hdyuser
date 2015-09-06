@@ -27,11 +27,11 @@ class HuoDongYouVC : RootVC ,UITableViewDelegate,UITableViewDataSource {
     //MARK: 渲染详细
     override func RenderDetail()
     {
-        self.title="地点列表";
+       // self.title="地点列表";
         self.tableView.delegate = self
         self.tableView.dataSource = self
-         UIHelper.SetNaviBarRightItemWithIcon(self, action: "toggleRightMenu:", strName: "Contact")
-    
+         UIHelper.SetNaviBarRightItemWithIcon(self, action: "toggleRightMenu:", strName: "filter")
+       // UIHelper.SetNaviBarLeftItemWithIcon(self, action: "toggleleftMenu:", strName: "Contact")
         
     }
     
@@ -40,6 +40,8 @@ class HuoDongYouVC : RootVC ,UITableViewDelegate,UITableViewDataSource {
     {
         self.navigationController?.pushViewController(UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "RegisterVC"), animated: true)
     }
+    
+    
     
     
     //MARK: 按钮点击事件

@@ -16,7 +16,7 @@ class AppConfig: NSObject {
     
     ////////////////////////////访问字符串
     //MARK: 一些基本的配置
-    static let SERVICE_ROOT_PATH = "http://192.168.1.26:47897/"
+    static var SERVICE_ROOT_PATH = "http://192.168.1.26:47897/"
     
     //MARK: 访问服务地址的配置
     //手机号登录
@@ -67,11 +67,19 @@ class AppConfig: NSObject {
     
     static var Url_ActivityList = "api/Activity/ActivityList"
     
+    static var Url_LocationList = "api/Activity/LocationList"
+    
     static var Url_AlbumList = "api/Activity/AlbumList"
     
     static var Url_PersonList = "api/Contact/PersonList"
     
     static var Url_OrgList = "api/Contact/OrgList"
+    
+    static var Url_MyFollwerAndLocation = "api/Contact/MyFollowingAndLocation"
+    
+    static var Url_MakeFavLocation = "api/Contact/MakeFavLocation"
+    
+    static var Url_MakeFollow = "api/Contact/MakeFollow"
     
     
     ////////////////////////////=== Notification
@@ -127,6 +135,8 @@ class AppConfig: NSObject {
     var HDYName = ""
     var Portrait = ""
     var RealName = ""
+    var IsTest = true
+    
     //MARK: 一些函数
     func isUserLogin()->Bool
     {
@@ -147,6 +157,7 @@ class AppConfig: NSObject {
         AppConfig.sharedAppConfig.HDYName = dataDir.objectForKey("HDYName") as! String
         AppConfig.sharedAppConfig.Portrait = dataDir.objectForKey("Portrait") as! String
         AppConfig.sharedAppConfig.RealName = dataDir.objectForKey("RealName") as! String
+        AppConfig.sharedAppConfig.IsTest = dataDir.objectForKey("IsTest") as! Bool
         AppConfig.sharedAppConfig.save()
         NSNotificationCenter.defaultCenter().postNotificationName("ReloadUserInfo_Notiication", object: nil)
     }
@@ -173,6 +184,7 @@ class AppConfig: NSObject {
         }
         
         ud.setBool(IsCreator, forKey: "Configuration_CurrentIsCreator")
+        ud.setBool(IsTest, forKey: "Configuration_CurrentIsTest")
         
         if(!self.Portrait.isNullOrEmpty())
         {
@@ -238,9 +250,14 @@ class AppConfig: NSObject {
             self.Portrait = ud.objectForKey("Configuration_Portrait") as! String;
         }
         
-        if(ud.boolForKey("Configuration_CurrentIsCreator"))
+        if(ud.objectForKey("Configuration_CurrentIsTest") != nil)
         {
             self.IsCreator = ud.boolForKey("Configuration_CurrentIsCreator")
+        }
+        
+        if(ud.objectForKey("Configuration_CurrentIsTest") != nil)
+        {
+            self.IsTest = ud.boolForKey("Configuration_CurrentIsTest")
         }
         
     }

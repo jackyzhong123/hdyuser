@@ -75,6 +75,10 @@
 		33615E3E1B99E3410046750F /* PersonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E3D1B99E3410046750F /* PersonDetail.swift */; };
 		33615E411B9A002B0046750F /* HuoDongYouVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E401B9A002B0046750F /* HuoDongYouVC.swift */; };
 		33615E431B9A01E70046750F /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E421B9A01E70046750F /* ContactVC.swift */; };
+		33615E451B9A602D0046750F /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33615E441B9A602D0046750F /* Contact.storyboard */; };
+		33615E4B1B9AA0BF0046750F /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 33615E481B9AA0BF0046750F /* MGSwipeButton.m */; };
+		33615E4C1B9AA0BF0046750F /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33615E4A1B9AA0BF0046750F /* MGSwipeTableCell.m */; };
+		33615E4E1B9AB57D0046750F /* AllLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33615E4D1B9AB57D0046750F /* AllLocationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +194,12 @@
 		33615E3D1B99E3410046750F /* PersonDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetail.swift; sourceTree = "<group>"; };
 		33615E401B9A002B0046750F /* HuoDongYouVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HuoDongYouVC.swift; path = View/HuoDongYouVC.swift; sourceTree = "<group>"; };
 		33615E421B9A01E70046750F /* ContactVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactVC.swift; path = View/ContactVC.swift; sourceTree = "<group>"; };
+		33615E441B9A602D0046750F /* Contact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
+		33615E471B9AA0BF0046750F /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		33615E481B9AA0BF0046750F /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		33615E491B9AA0BF0046750F /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		33615E4A1B9AA0BF0046750F /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		33615E4D1B9AB57D0046750F /* AllLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllLocationVC.swift; path = View/AllLocationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +256,7 @@
 				1B6899C51B988AC90017EB85 /* Supporting Files */,
 				1B689A771B9893860017EB85 /* Account.storyboard */,
 				33615E251B99AA720046750F /* Find.storyboard */,
+				33615E441B9A602D0046750F /* Contact.storyboard */,
 			);
 			path = HDY;
 			sourceTree = "<group>";
@@ -309,6 +320,7 @@
 		1B6899EC1B988BC00017EB85 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				33615E461B9AA0BF0046750F /* MGSwipeTableCell */,
 				1B689A0B1B988C3A0017EB85 /* AFNetworking */,
 				1B689A1F1B988C3A0017EB85 /* SDWebImage */,
 				1B689A411B988C3A0017EB85 /* SVProgressHUD */,
@@ -471,6 +483,7 @@
 				33615E351B99C3CC0046750F /* AllOrganizationVC.swift */,
 				33615E391B99DC3F0046750F /* AllAlbumVC.swift */,
 				33615E3B1B99E19C0046750F /* AllPersonVC.swift */,
+				33615E4D1B9AB57D0046750F /* AllLocationVC.swift */,
 			);
 			name = Find;
 			sourceTree = "<group>";
@@ -482,6 +495,18 @@
 				33615E421B9A01E70046750F /* ContactVC.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		33615E461B9AA0BF0046750F /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				33615E471B9AA0BF0046750F /* MGSwipeButton.h */,
+				33615E481B9AA0BF0046750F /* MGSwipeButton.m */,
+				33615E491B9AA0BF0046750F /* MGSwipeTableCell.h */,
+				33615E4A1B9AA0BF0046750F /* MGSwipeTableCell.m */,
+			);
+			name = MGSwipeTableCell;
+			path = Library/MGSwipeTableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,6 +594,7 @@
 				1B689A781B9893860017EB85 /* Account.storyboard in Resources */,
 				1B6899D41B988AC90017EB85 /* LaunchScreen.xib in Resources */,
 				33615E341B99C3A10046750F /* placeholder.png in Resources */,
+				33615E451B9A602D0046750F /* Contact.storyboard in Resources */,
 				1B689A611B988C3A0017EB85 /* SVProgressHUD.bundle in Resources */,
 				33615E261B99AA720046750F /* Find.storyboard in Resources */,
 			);
@@ -591,6 +617,7 @@
 				1BFB8E2E1B99284800C018B2 /* MeHeaderCell.swift in Sources */,
 				1B689A471B988C3A0017EB85 /* AFHTTPRequestOperation.m in Sources */,
 				1B689A6C1B988CFB0017EB85 /* Dictionary.swift in Sources */,
+				33615E4C1B9AA0BF0046750F /* MGSwipeTableCell.m in Sources */,
 				1B6899CC1B988AC90017EB85 /* SecondViewController.swift in Sources */,
 				1B689A5C1B988C3A0017EB85 /* UIImage+WebP.m in Sources */,
 				1B689A481B988C3A0017EB85 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -633,6 +660,8 @@
 				33615E171B997AC00046750F /* ChangeHDYNameVC.swift in Sources */,
 				33615E411B9A002B0046750F /* HuoDongYouVC.swift in Sources */,
 				1B689A4D1B988C3A0017EB85 /* AFURLRequestSerialization.m in Sources */,
+				33615E4B1B9AA0BF0046750F /* MGSwipeButton.m in Sources */,
+				33615E4E1B9AB57D0046750F /* AllLocationVC.swift in Sources */,
 				1BFB8E2C1B9927F700C018B2 /* MeVC.swift in Sources */,
 				1B689A581B988C3A0017EB85 /* SDWebImagePrefetcher.m in Sources */,
 				1B689A4F1B988C3A0017EB85 /* AFURLSessionManager.m in Sources */,

@@ -213,6 +213,10 @@ class UIHelper {
     {
         UIHelper.SetNavigationBar(false, targetVC: targetVC, doAction: action, isImg: true, strNname: strName,color:mainColor)
     }
+    static func SetNaviBarLeftItemWithIcon(targetVC:UIViewController,action:Selector,strName:String)
+    {
+        UIHelper.SetNavigationBar(true, targetVC: targetVC, doAction: action, isImg: true, strNname: strName,color:mainColor)
+    }
     
     
     static func SetNavigationBar(isLeft:Bool,targetVC:UIViewController,doAction:Selector,isImg:Bool,strNname:String,color:UIColor)
@@ -223,7 +227,16 @@ class UIHelper {
             
             if(isImg)
             {
-                btn.setBackgroundImage( UIImage(named:strNname), forState: UIControlState.Normal)
+                if (strNname == "navi_back.png")
+                {
+                      btn.setBackgroundImage( UIImage(named:strNname), forState: UIControlState.Normal)
+                }else
+                {
+                     targetVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:strNname), style: UIBarButtonItemStyle.Plain, target: targetVC, action: doAction)
+                    targetVC.navigationItem.leftBarButtonItem!.tintColor = color;
+                    return
+                }
+              
             }
             else
             {

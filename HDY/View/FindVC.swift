@@ -32,6 +32,7 @@ class FindVC: RootVC ,UITableViewDelegate,UITableViewDataSource {
         ["name":"个人号","icon":"","targetVC":"AllPersonVC"],
 
         ["name":"专辑","icon":"","targetVC":"AllAlbumVC"],
+         ["name":"地点","icon":"","targetVC":"AllLocationVC"],
 
         //  ["name":"性别","icon":"","targetVC":"MyAlbumListVC"],
         // ["name":"更换手机","icon":"","targetVC":"MyLocationVC"],

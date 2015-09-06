@@ -20,8 +20,9 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
     let CellArray1 =   [
         ["name":"名字","icon":"","targetVC":"ChangeRealNameVC"],
         ["name":"活动邮号","icon":"","targetVC":"ChangeHDYNameVC"],
-      //  ["name":"性别","icon":"","targetVC":"MyAlbumListVC"],
-       // ["name":"更换手机","icon":"","targetVC":"MyLocationVC"],
+        
+        //  ["name":"性别","icon":"","targetVC":"MyAlbumListVC"],
+        // ["name":"更换手机","icon":"","targetVC":"MyLocationVC"],
         //["name":"更换密码","icon":"","targetVC":"MyPeopleVC"]
     ]
     
@@ -50,7 +51,7 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
     {
         tableView.reloadData();
     }
-
+    
     
     //MARK: 按钮点击事件
     override func ButtonTap(tag: Int) {
@@ -68,8 +69,8 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
             AppConfig.sharedAppConfig.save()
             tableView.reloadData()
             NSNotificationCenter.defaultCenter().postNotificationName(AppConfig.NF_ChangeUerProfile, object: nil, userInfo: nil)
-
-
+            
+            
         }
         
         if (tag == 99)
@@ -85,7 +86,7 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     
@@ -109,6 +110,11 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
             
             //其他选项
         }else if (indexPath.section == 2)
+        {
+            AppConfig.sharedAppConfig.IsTest = !AppConfig.sharedAppConfig.IsTest
+            AppConfig.sharedAppConfig.save()
+            self.tableView.reloadData()
+        }else if (indexPath.section == 3)
         {
             AppConfig.sharedAppConfig.userLogout()
             var vc = UIHelper.GetVCWithIDFromStoryBoard(.Account, viewControllerIdentity: "loginNavigation")
@@ -138,10 +144,11 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
         }else if (section == 2)
         {
             return 1;
-        }else
+        }else if (section == 3)
         {
-            return 0
+            return 1
         }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -149,7 +156,7 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
         if (indexPath.section == 0 && indexPath.row == 0)
         {
             var cell:MeHeaderCell =  tableView.dequeueReusableCellWithIdentifier(headCell) as! MeHeaderCell
-        
+            
             cell.imgCover!.sd_setImageWithURL(NSURL(string:AppConfig.sharedAppConfig.Portrait)!, placeholderImage: UIImage(named: "placeholder.png"))
             cell.lbName.text = "头像"
             var layer:CALayer = cell.imgCover.layer
@@ -161,7 +168,7 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
             
             
             var cell:UITableViewCell =  tableView.dequeueReusableCellWithIdentifier(generalCell) as! UITableViewCell
-           
+            
             var photoItem:NSDictionary! = CellArray1[indexPath.row] as NSDictionary
             cell.textLabel?.text =  photoItem.objectForKey("name") as? String
             switch(indexPath.row)
@@ -171,18 +178,56 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
                 break;
             case 1:
                 cell.detailTextLabel?.text = AppConfig.sharedAppConfig.HDYName
-
+                
                 break;
             default:
                 break;
             }
             
-   
-           
+            
+            
             //  cell.imageView?.image = UIImage(named: iconArr[indexPath.row])
             return cell
             
-        }else if (indexPath.section == 2)
+        }else if(indexPath.section == 2 )
+        {
+            var cell:UITableViewCell =  tableView.dequeueReusableCellWithIdentifier(logoutCell) as! UITableViewCell
+            
+            UIScreen.mainScreen().bounds.size.width
+            
+            
+           cell.subviews.last!.removeFromSuperview()
+            
+            var v = UIView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, cell.frame.height));
+            var label = UILabel(frame: v.frame);
+            
+            
+            
+            if (AppConfig.sharedAppConfig.IsTest)
+            {
+                label.text = "正在使用内网测试"
+            }else
+            {
+                label.text = "正在使用外网测试"
+            }
+            
+            if (AppConfig.sharedAppConfig.IsTest)
+            {
+                AppConfig.SERVICE_ROOT_PATH = "http://192.168.1.26:47897/"
+            }else
+            {
+                AppConfig.SERVICE_ROOT_PATH = "http://newhuodongyou.chinacloudsites.cn/"
+            }
+
+            
+            label.textColor = UIColor.greenColor();
+            label.font = UIHelper.mainFont14;
+            label.textAlignment = NSTextAlignment.Center;
+            
+            v.addSubview(label);
+            cell.addSubview(v);
+            return cell
+        } else if (indexPath.section == 3)
         {
             var cell:UITableViewCell =  tableView.dequeueReusableCellWithIdentifier(logoutCell) as! UITableViewCell
             
@@ -207,6 +252,7 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
         
         
     }
+    
     
     
     //MARK:修改用户头像

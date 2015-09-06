@@ -9,3 +9,5 @@
 #include "SVProgressHUD.h"
 #include "AFNetworking.h"
 #import "UIImageView+WebCache.h"
+#import "MGSwipeTableCell.h"
+#import "MGSwipeButton.h"

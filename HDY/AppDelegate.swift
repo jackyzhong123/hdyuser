@@ -18,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        if (AppConfig.sharedAppConfig.IsTest)
+        {
+            AppConfig.SERVICE_ROOT_PATH = "http://192.168.1.26:47897/"
+        }else
+        {
+             AppConfig.SERVICE_ROOT_PATH = "http://newhuodongyou.chinacloudsites.cn/"
+        }
+        
+        
+        
         if(AppConfig.sharedAppConfig.isUserLogin())
         {
             //顺利登陆
