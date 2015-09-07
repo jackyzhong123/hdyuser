@@ -9,16 +9,6 @@
 import UIKit
 
 
-//
-//  TableSampleController.swift
-//  HDYAdmin
-//
-//  Created by Sky on 15/9/2.
-//  Copyright (c) 2015年 HuoDongYou. All rights reserved.
-//
-
-
-
 class FindVC: RootVC ,UITableViewDelegate,UITableViewDataSource {
     
     

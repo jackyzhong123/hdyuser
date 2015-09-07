@@ -199,8 +199,6 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
             }
             
             
-            
-            //  cell.imageView?.image = UIImage(named: iconArr[indexPath.row])
             return cell
             
         }else if(indexPath.section == 2 )
@@ -315,6 +313,7 @@ class ProfileVC: RootVC ,UITableViewDelegate,UITableViewDataSource ,UIImagePicke
         NSLog("count:%d", info);
         //编辑过后的图片
         let gotImage:UIImage! = info[UIImagePickerControllerEditedImage] as! UIImage
+        
         picker.dismissViewControllerAnimated(true, completion: {
             () -> Void in
             if(gotImage != nil)

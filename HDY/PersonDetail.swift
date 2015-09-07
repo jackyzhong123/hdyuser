@@ -14,6 +14,7 @@ class PersonDetail: NSObject {
     var HDYName:String!
     var Portrait:String!
     var UserName:String!
+    var RealName:String!
     
     
     init(dict:NSDictionary) {
@@ -26,6 +27,7 @@ class PersonDetail: NSObject {
         self.HDYName = dict.objectForKey("HDYName") as! String
         self.Portrait = dict.objectForKey("Portrait") as! String
         self.UserName = dict.objectForKey("UserName") as! String
+        self.RealName = dict.objectForKey("RealName") as! String
         
     }
     

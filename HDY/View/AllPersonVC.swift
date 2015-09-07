@@ -83,7 +83,7 @@ class AllPersonVC: RootVC ,UITableViewDelegate,UITableViewDataSource,MGSwipeTabl
         var cell:UITableViewCell =  tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! UITableViewCell
         var obj = listData[indexPath.row]
         
-        cell.textLabel?.text = obj.HDYName
+        cell.textLabel?.text = obj.RealName
         
         cell.imageView!.sd_setImageWithURL(NSURL(string:obj.Portrait)!, placeholderImage: UIImage(named: "placeholder.png"))
         
